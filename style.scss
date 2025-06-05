@@ -14,18 +14,9 @@ body {
     background-color: $bg-color-secondary;
 }
 
-
-
-// div{
-//     padding: 30px;
-// }
-
-.center{
+.hero {
     padding-left: calc(50% - 600px);
     padding-right: calc(50% - 600px);
-}
-
-.top{
     background: rgb(225, 255, 143);
     height: 800px;
     background-image: url('img/Group 1597880565 (1).svg'), url('img/Star\ 2.svg'), url('img/Star\ 3.svg'), url('img/Star\ 4.svg'), url('img/Star\ 5.svg');
@@ -38,124 +29,171 @@ body {
     background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
 }
 
-.header{
+.header {
     padding-top: 200px;
     display: flex;
     gap: 24px;
     flex-direction: column;
-    &__title{
+
+    &__title {
         max-width: 768px;
         font-size: 64px;
         font-weight: 700;
     }
     
-    &__subtitle{
+    &__subtitle {
         max-width: 720px;
+        font-size: 24px;
     }
-    &__scroll{
-        &-content{
-            display: flex;
-            gap: 50px;
-            padding-top: 25px;
-            height: 90px;
-            width: 3200px;
-            background-color: rgb(188, 236, 48);
+
+    &__button {
+        min-width: 247px;
+        width: fit-content;
+        height: 66px;
+        font-weight: 600;
+        margin-top: 48px;
+        box-sizing: border-box;
+        border: 1px solid rgb(32, 32, 39);
+        border-radius: 60px;
+        background: rgb(32, 32, 39);
+        padding: 16px 28px;
+        color: #FFFFFF;
+        font-family: $font-family-primary;
+        font-size: 24px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+
+        &:hover {
+            background: #FFFFFF;
+            color: rgb(32, 32, 39);
         }
-        &-text{
-            font-size: 30px;
-            font-weight: 700;
-            text-transform: uppercase;
-        }
-        
     }
 }
 
-.about-box{
-    height: 1470px;
+.scroll {
+    display: flex;
+    gap: 50px;
+    padding-top: 25px;
+    height: 90px;
+    width: 100%;
+    background-color: rgb(188, 236, 48);
+    overflow: hidden;
+    white-space: nowrap;
+
+    &__text {
+        font-size: 30px;
+        font-weight: 700;
+        text-transform: uppercase;
+    }
+
+    &__icon {
+        height: 30px;
+    }
+}
+
+.games {
+    padding-left: calc(50% - 600px);
+    padding-right: calc(50% - 600px);
     background: rgb(32, 32, 39);
-    &-textbox{
+    padding-bottom: 100px;
+
+    &__intro {
         padding-top: 100px;
     }
 
-    &-title{
+    &__title {
         font-size: 64px;
         font-weight: 700;
         color: rgb(255, 255, 255);
         margin-bottom: 24px;
     }
 
-    &-subtext{
+    &__description {
         color: rgb(255, 255, 255);
         font-size: 24px;
         font-weight: 400;
         max-width: 780px;
         margin-bottom: 74px;
     }
-    &__items{
+
+    &__list {
         display: flex;
         gap: 32px;
         flex-wrap: wrap;
     }
+}
 
-    &__item-link {
-        text-decoration: none;
-        color: inherit;
-        transition: transform 0.3s ease;
-        display: block;
+.game-card {
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.3s ease;
 
-        &:hover {
-            transform: scale(1.02);
-        }
+    &:hover {
+        transform: scale(1.02);
+    }
 
-        &:nth-child(2),
-        &:nth-child(5) {
-            .about-box__item {
-                height: 512px;
-            }
-        }
-
-        &:nth-child(4),
-        &:nth-child(6) {
-            .about-box__item {
-                height: 551px;
-                margin-top: -42px;
-            }
+    &:nth-child(2),
+    &:nth-child(5) {
+        .game-card__content {
+            height: 512px;
         }
     }
 
-    &__item{
+    &:nth-child(4),
+    &:nth-child(6) {
+        .game-card__content {
+            height: 551px;
+            margin-top: -42px;
+        }
+    }
+
+    &__content {
         border-radius: 30px;
         box-shadow: 0px 12.61px 42.25px -7.57px rgba(0, 0, 0, 0.13);
         background: rgb(255, 255, 255);
         height: 473px;
         width: 378px;
+        text-decoration: none;
+        color: inherit;
+        display: block;
+    }
 
-        &__desc{
-            padding: 32px;
-        }
+    &__image {
+        width: 100%;
+        border-radius: 30px 30px 0 0;
+    }
 
-        &-border{
-            width: 108px;
-            height: 36px;
-            border-radius: 52.58px;
-            background: rgb(247, 247, 247);
-        }
+    &__info {
+        padding: 32px;
+    }
 
-        &-borderText{
-            padding: 8px 16px;
+    &__badge {
+        width: 108px;
+        height: 36px;
+        border-radius: 52.58px;
+        background: rgb(247, 247, 247);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &-text {
             font-size: 16px;
             font-weight: 500;
             color: rgb(32, 32, 39);
         }
+    }
 
-        &-gameName{
-            padding-top: 16px;
-            font-size: 32px;
-            font-weight: 700;
-        }
+    &__title {
+        padding-top: 16px;
+        font-size: 32px;
+        font-weight: 700;
+        margin: 0;
     }
 }
-
 
 .star-icon{
     height: 30px;
