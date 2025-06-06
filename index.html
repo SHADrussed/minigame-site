@@ -12,11 +12,11 @@
 </head>
 <body>
     <main>
-        <section class="hero">
+        <section class="hero center">
             <header class="header">
                 <h1 class="header__title">Добро пожаловать на мой сайт мини-игр</h1>
                 <p class="header__subtitle">Тебе предстоит пройти несколько увлекательных игр. Если готов, нажимай «Поехали!» и приступай.</p>
-                <a href="#games" class="header__button" role="button" aria-label="Перейти к списку игр">Поехали!</a>
+                <a href="#games" class="header__button button" role="button" aria-label="Перейти к списку игр">Поехали!</a>
                 <nav class="header__scroll">
                 </nav>
             </header>
@@ -37,14 +37,16 @@
             <img src="img/star.svg" class="scroll__icon" alt="Декоративная звезда" aria-hidden="true">
         </section>
 
-        <section class="games" id="games" aria-labelledby="games-title">
+        <section class="games center" id="games" aria-labelledby="games-title">
             <div class="games__intro">
                 <h2 class="games__title" id="games-title">Об играх</h2>
                 <p class="games__description">В моей коллекции представлено 6 игр на разные темы. Игры несложные — в них может поиграть каждый.
 Все игры доступны для пользования.</p>
             </div>
+
+            <h2 class="games__mobile">Мини-игры</h2>
             
-            <nav class="games__list" aria-label="Навигация по играм">
+            <nav class="games__list center" aria-label="Навигация по играм">
                 <article class="game-card">
                     <a href="#game1" class="game-card__content">
                         <img src="img/game-card-1.png" alt="Обложка игры 'Угадай число'" class="game-card__image">
@@ -53,8 +55,13 @@
                                 <p class="game-card__badge-text">Игра №1</p>
                             </div>
                             <h3 class="game-card__title">Угадай число</h3>
+                            <div class="game-card__subtitle">
+                                Попробуй угадать случайное число от 1 до 100.
+                            </div>
+                            <span href="#games" class="game-card__button button" role="button" aria-label="Перейти к списку игр">Играть!</span>
                         </div>
                     </a>
+
                 </article>
 
                 <article class="game-card">
@@ -65,6 +72,10 @@
                                 <p class="game-card__badge-text">Игра №2</p>
                             </div>
                             <h3 class="game-card__title">Простая арифметика</h3>
+                            <div class="game-card__subtitle">
+                                Попробуй решить простые арифметические задачи.
+                            </div>
+                            <span href="#games" class="game-card__button button" role="button" aria-label="Перейти к списку игр">Играть!</span>
                         </div>
                     </a>
                 </article>
@@ -77,6 +88,10 @@
                                 <p class="game-card__badge-text">Игра №3</p>
                             </div>
                             <h3 class="game-card__title">Переверни текст</h3>
+                            <div class="game-card__subtitle">
+                                Попробуй ввести текст, который будет перевернут.
+                            </div>
+                            <span href="#games" class="game-card__button button" role="button" aria-label="Перейти к списку игр">Играть!</span>
                         </div>
                     </a>
                 </article>
@@ -89,6 +104,10 @@
                                 <p class="game-card__badge-text">Игра №4</p>
                             </div>
                             <h3 class="game-card__title">Камень, ножницы, бумага</h3>
+                            <div class="game-card__subtitle">
+                                Сыграй в популярную игру против компьютера.
+                            </div>
+                            <span href="#games" class="game-card__button button" role="button" aria-label="Перейти к списку игр">Играть!</span>
                         </div>
                     </a>
                 </article>
@@ -101,6 +120,10 @@
                                 <p class="game-card__badge-text">Игра №5</p>
                             </div>
                             <h3 class="game-card__title">Простая викторина</h3>
+                            <div class="game-card__subtitle">
+                                Отвечай на вопросы викториныс вариантами ответов.
+                            </div>
+                            <span href="#games" class="game-card__button button" role="button" aria-label="Перейти к списку игр">Играть!</span>
                         </div>
                     </a>
                 </article>
@@ -113,11 +136,21 @@
                                 <p class="game-card__badge-text">Игра №6</p>
                             </div>
                             <h3 class="game-card__title">Генератор случайных цветов</h3>
+                            <div class="game-card__subtitle">
+                                Игра, в которой при клике на кнопку фон страницы меняется на случайный.
+                            </div>
+                            <span href="#games" class="game-card__button button" role="button" aria-label="Перейти к списку игр">Играть!</span>
                         </div>
                     </a>
                 </article>
             </nav>
         </section>
     </main>
+
+    <footer class="footer">
+        <div class="footer__background">
+            <p class="footer__text">Все права защищены.</p>
+        </div>
+    </footer>
 </body>
 </html>

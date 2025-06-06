@@ -1,6 +1,7 @@
 @import 'colors';
 @import 'vars';
 
+
 * {
     margin: 0;
     padding: 0;
@@ -14,9 +15,36 @@ body {
     background-color: $bg-color-secondary;
 }
 
-.hero {
+.center{
     padding-left: calc(50% - 600px);
     padding-right: calc(50% - 600px);
+}
+
+.button{
+    width: fit-content;
+    font-weight: 600;
+    box-sizing: border-box;
+    border: 1px solid rgb(32, 32, 39);
+    border-radius: 60px;
+    background: rgb(32, 32, 39);
+    padding: 16px 28px;
+    color: #FFFFFF;
+    font-family: $font-family-primary;
+    font-size: 24px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    &:hover {
+        background: #FFFFFF;
+        color: rgb(32, 32, 39);
+    }
+}
+
+.hero {
     background: rgb(225, 255, 143);
     height: 800px;
     background-image: url('img/hero-bg.svg'), url('img/star-2.svg'), url('img/star-3.svg'), url('img/star-4.svg'), url('img/star-5.svg');
@@ -32,13 +60,13 @@ body {
 .header {
     padding-top: 200px;
     display: flex;
-    gap: 24px;
     flex-direction: column;
 
     &__title {
         max-width: 768px;
         font-size: 64px;
         font-weight: 700;
+        margin-bottom: 24px;
     }
     
     &__subtitle {
@@ -48,29 +76,9 @@ body {
 
     &__button {
         min-width: 247px;
-        width: fit-content;
         height: 66px;
-        font-weight: 600;
         margin-top: 48px;
-        box-sizing: border-box;
-        border: 1px solid rgb(32, 32, 39);
-        border-radius: 60px;
-        background: rgb(32, 32, 39);
-        padding: 16px 28px;
-        color: #FFFFFF;
-        font-family: $font-family-primary;
-        font-size: 24px;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        text-decoration: none;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-
-        &:hover {
-            background: #FFFFFF;
-            color: rgb(32, 32, 39);
-        }
+        
     }
 }
 
@@ -96,8 +104,6 @@ body {
 }
 
 .games {
-    padding-left: calc(50% - 600px);
-    padding-right: calc(50% - 600px);
     background: rgb(32, 32, 39);
     padding-bottom: 100px;
 
@@ -118,6 +124,9 @@ body {
         font-weight: 400;
         max-width: 780px;
         margin-bottom: 74px;
+    }
+    &__mobile{
+        display: none;
     }
 
     &__list {
@@ -193,8 +202,16 @@ body {
         font-weight: 700;
         margin: 0;
     }
+
+    &__subtitle{
+        display: none;
+    }
+    &__button{
+        display: none;
+    }
 }
 
 .star-icon{
     height: 30px;
 }
+@import 'mobile';
