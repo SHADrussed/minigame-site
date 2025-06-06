@@ -11,38 +11,15 @@ body {
   background-color: #F5F6FA;
 }
 
-.hero {
+.center {
   padding-left: calc(50% - 600px);
   padding-right: calc(50% - 600px);
-  background: rgb(225, 255, 143);
-  height: 800px;
-  background-image: url("img/hero-bg.svg"), url("img/star-2.svg"), url("img/star-3.svg"), url("img/star-4.svg"), url("img/star-5.svg");
-  background-position: 800px -350px, 40px 90px, 140px 70px, 1050px 570px, 950px 540px;
-  background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
 }
 
-.header {
-  padding-top: 200px;
-  display: flex;
-  gap: 24px;
-  flex-direction: column;
-}
-.header__title {
-  max-width: 768px;
-  font-size: 64px;
-  font-weight: 700;
-}
-.header__subtitle {
-  max-width: 720px;
-  font-size: 24px;
-}
-.header__button {
-  min-width: 247px;
+.button {
   width: -moz-fit-content;
   width: fit-content;
-  height: 66px;
   font-weight: 600;
-  margin-top: 48px;
   box-sizing: border-box;
   border: 1px solid rgb(32, 32, 39);
   border-radius: 60px;
@@ -58,9 +35,38 @@ body {
   align-items: center;
   justify-content: center;
 }
-.header__button:hover {
+.button:hover {
   background: #FFFFFF;
   color: rgb(32, 32, 39);
+}
+
+.hero {
+  background: rgb(225, 255, 143);
+  height: 800px;
+  background-image: url("img/hero-bg.svg"), url("img/star-2.svg"), url("img/star-3.svg"), url("img/star-4.svg"), url("img/star-5.svg");
+  background-position: 800px -350px, 40px 90px, 140px 70px, 1050px 570px, 950px 540px;
+  background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
+}
+
+.header {
+  padding-top: 200px;
+  display: flex;
+  flex-direction: column;
+}
+.header__title {
+  max-width: 768px;
+  font-size: 64px;
+  font-weight: 700;
+  margin-bottom: 24px;
+}
+.header__subtitle {
+  max-width: 720px;
+  font-size: 24px;
+}
+.header__button {
+  min-width: 247px;
+  height: 66px;
+  margin-top: 48px;
 }
 
 .scroll {
@@ -83,8 +89,6 @@ body {
 }
 
 .games {
-  padding-left: calc(50% - 600px);
-  padding-right: calc(50% - 600px);
   background: rgb(32, 32, 39);
   padding-bottom: 100px;
 }
@@ -103,6 +107,9 @@ body {
   font-weight: 400;
   max-width: 780px;
   margin-bottom: 74px;
+}
+.games__mobile {
+  display: none;
 }
 .games__list {
   display: flex;
@@ -162,7 +169,107 @@ body {
   font-weight: 700;
   margin: 0;
 }
+.game-card__subtitle {
+  display: none;
+}
+.game-card__button {
+  display: none;
+}
 
 .star-icon {
   height: 30px;
+}
+
+@media (max-width: 1200px) {
+  .center {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+  .header {
+    align-items: center;
+  }
+  .header__title {
+    font-size: 40px;
+    text-align: center;
+    width: 262px;
+  }
+  .header__subtitle {
+    font-size: 16px;
+    text-align: center;
+  }
+  .header__button {
+    width: 285px;
+    height: 55px;
+    font-size: 16px;
+    font-weight: 500;
+  }
+  .scroll {
+    padding-bottom: 48px;
+    padding-left: 27px;
+    height: 51.34px;
+    padding-top: 16px;
+    gap: 27px;
+  }
+  .scroll__text {
+    font-size: 16px;
+  }
+  .scroll__icon {
+    height: 20px;
+  }
+  .games__intro {
+    display: none;
+  }
+  .games__mobile {
+    display: block;
+    padding-top: 48px;
+    padding-bottom: 48px;
+    font-size: 40px;
+    font-weight: 700;
+    color: rgb(255, 255, 255);
+  }
+  .game-card:nth-child(4) .game-card__content, .game-card:nth-child(6) .game-card__content, .game-card:nth-child(2) .game-card__content, .game-card:nth-child(5) .game-card__content {
+    margin-top: 0px;
+  }
+  .game-card:nth-child(2) .game-card__content, .game-card:nth-child(3) .game-card__content, .game-card:nth-child(5) .game-card__content {
+    height: 570px;
+  }
+  .game-card:nth-child(4) .game-card__content {
+    height: 610px;
+  }
+  .game-card:nth-child(6) .game-card__content {
+    height: 630px;
+  }
+  .game-card__content {
+    height: 520px;
+    width: 343px;
+    margin-top: 0px;
+  }
+  .game-card__subtitle {
+    display: block;
+    padding-top: 16px;
+  }
+  .game-card__title {
+    padding-top: 0px;
+  }
+  .game-card__badge {
+    display: none;
+  }
+  .game-card__button {
+    display: block;
+    width: 285px;
+    margin-top: 32px;
+  }
+  .game-card__info {
+    padding: 20px 30px;
+  }
+  .footer__background {
+    height: 100px;
+    background: rgb(189, 237, 53);
+  }
+  .footer__text {
+    text-align: center;
+    padding: 40px;
+    font-size: 16px;
+    font-weight: 600;
+  }
 }/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,118 @@
+@media (max-width: 1200px){
+    .center{
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+    .header{
+        align-items: center;
+        &__title{
+            font-size: 40px;
+            text-align: center;
+            width: 262px;
+        }
+        &__subtitle{
+            font-size: 16px;
+            text-align: center;
+        }
+        &__button{
+            width: 285px;
+            height: 55px;
+            font-size: 16px;
+            font-weight: 500;
+        }
+    }
+    .scroll{
+        padding-bottom: 48px;
+        padding-left: 27px;
+        height: 51.34px;
+        padding-top: 16px;
+        gap: 27px;
+        &__text{
+            font-size: 16px;
+        }
+        &__icon{
+            height: 20px;
+        }
+    }
+    
+    .games{
+        &__intro{
+            display: none;
+        }
+        &__mobile{
+            display: block;
+            padding-top: 48px;
+            padding-bottom: 48px;
+            font-size: 40px;
+            font-weight: 700;
+            color: rgb(255, 255, 255);
+        }
+    }
+    .game-card{
+        &:nth-child(4)
+        &__content,
+        &:nth-child(6)
+        &__content,
+        &:nth-child(2) &__content,
+        &:nth-child(5) &__content
+        {
+            margin-top: 0px;
+        }
+
+        &:nth-child(2) &__content,
+        &:nth-child(3) &__content,
+        &:nth-child(5) &__content{
+            height: 570px;
+        }
+
+        &:nth-child(4) &__content{
+            height: 610px;
+        }
+
+        &:nth-child(6) &__content{
+            height: 630px;
+        }
+
+        &__content{
+            height: 520px;
+            width: 343px;
+            margin-top: 0px;
+        }
+
+        &__subtitle{
+            display: block;
+            padding-top: 16px;
+        }
+
+        &__title{
+            padding-top: 0px;
+        }
+
+        &__badge{
+            display: none;
+        }
+
+        &__button{
+            display: block;
+            width: 285px;
+            margin-top: 32px;
+        }
+
+        &__info{
+            padding: 20px 30px;
+        }
+    }
+
+    .footer{
+        &__background{
+            height: 100px;
+            background: rgb(189, 237, 53);
+        }
+        &__text{
+            text-align: center;
+            padding: 40px;
+            font-size: 16px;
+            font-weight: 600;
+        }
+    }
+}
