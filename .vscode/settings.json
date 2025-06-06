@@ -1,0 +1,17 @@
+{
+    "scss.validate": true,
+    "css.validate": true,
+    "scss.scannerExclude": [
+        "**/.git",
+        "**/node_modules",
+        "**/bower_components"
+    ],
+    "editor.quickSuggestions": {
+        "strings": true
+    },
+    "editor.autoClosingQuotes": "always",
+    "editor.suggest.showColors": true,
+    "files.associations": {
+        "*.scss": "scss"
+    }
+} 
