@@ -53,77 +53,79 @@
             &-text{
                 display: none;
             }
-            &__block-right,
-            &__block-left {
+            &-block{
                 display: none;
             }
         }
+
+        &__list {
+            gap: 20px;
+            justify-content: center;
+        }
     }
-    .game-card{
-        &:nth-child(4)
-        &__content,
-        &:nth-child(6)
-        &__content,
-        &:nth-child(2) &__content,
-        &:nth-child(5) &__content
-        {
-            margin-top: 0px;
-        }
 
-        &:nth-child(2) &__content,
-        &:nth-child(3) &__content,
-        &:nth-child(5) &__content{
-            height: 570px;
-        }
-
-        &:nth-child(4) &__content{
-            height: 610px;
-        }
-
-        &:nth-child(6) &__content{
-            height: 630px;
-        }
-
-        &__content{
+    .game-card {
+        &__content {
             height: 520px;
             width: 343px;
-            margin-top: 0px;
+            margin-top: 0;
         }
 
-        &__subtitle{
+        &:nth-child(2),
+        &:nth-child(3),
+        &:nth-child(5) {
+            .game-card__content {
+                height: 570px;
+            }
+        }
+
+        &:nth-child(4) {
+            .game-card__content {
+                height: 610px;
+                margin-top: 0px;
+            }
+        }
+
+        &:nth-child(6) {
+            .game-card__content {
+                height: 630px;
+                margin-top: 0px;
+            }
+        }
+
+        &__subtitle {
             display: block;
             padding-top: 16px;
         }
 
-        &__title{
+        &__title {
             padding-top: 0px;
         }
 
-        &__badge{
+        &__badge {
             display: none;
         }
 
-        &__button{
+        &__button {
             display: block;
             width: 285px;
             margin-top: 32px;
-            
             font-size: 16px;
             font-weight: 500;
             text-align: center;
         }
 
-        &__info{
+        &__info {
             padding: 20px 30px;
         }
     }
 
-    .footer{
-        &__background{
+    .footer {
+        &__background {
             height: 100px;
             background: rgb(189, 237, 53);
         }
-        &__text{
+        &__text {
             text-align: center;
             padding: 40px;
             font-size: 16px;
