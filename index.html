@@ -43,12 +43,13 @@
                 <p class="games__description">В моей коллекции представлено 6 игр на разные темы. Игры несложные — в них может поиграть каждый.
 Все игры доступны для пользования.</p>
             </div>
-
+            
+            <!-- Это только для мобильной версии название -->
             <h2 class="games__mobile">Мини-игры</h2>
             
-            <nav class="games__list center" aria-label="Навигация по играм">
+            <nav class="games__list" aria-label="Навигация по играм">
                 <article class="game-card">
-                    <a href="#game1" class="game-card__content">
+                    <a href="#about-game1" class="game-card__content">
                         <img src="img/game-card-1.png" alt="Обложка игры 'Угадай число'" class="game-card__image">
                         <div class="game-card__info">
                             <div class="game-card__badge">
@@ -58,14 +59,13 @@
                             <div class="game-card__subtitle">
                                 Попробуй угадать случайное число от 1 до 100.
                             </div>
-                            <span href="#games" class="game-card__button button" role="button" aria-label="Перейти к списку игр">Играть!</span>
+                            <button class="game-card__button button" role="button" aria-label="Узнать больше об игре 'Угадай число'">Играть!</button>
                         </div>
                     </a>
-
                 </article>
 
                 <article class="game-card">
-                    <a href="#game2" class="game-card__content">
+                    <a href="#about-game2" class="game-card__content">
                         <img src="img/game-card-2.png" alt="Обложка игры 'Простая арифметика'" class="game-card__image">
                         <div class="game-card__info">
                             <div class="game-card__badge">
@@ -75,13 +75,13 @@
                             <div class="game-card__subtitle">
                                 Попробуй решить простые арифметические задачи.
                             </div>
-                            <span href="#games" class="game-card__button button" role="button" aria-label="Перейти к списку игр">Играть!</span>
+                            <button class="game-card__button button" role="button" aria-label="Узнать больше об игре 'Простая арифметика'">Играть!</button>
                         </div>
                     </a>
                 </article>
 
                 <article class="game-card">
-                    <a href="#game3" class="game-card__content">
+                    <a href="#about-game3" class="game-card__content">
                         <img src="img/game-card-3.png" alt="Обложка игры 'Переверни текст'" class="game-card__image">
                         <div class="game-card__info">
                             <div class="game-card__badge">
@@ -91,13 +91,13 @@
                             <div class="game-card__subtitle">
                                 Попробуй ввести текст, который будет перевернут.
                             </div>
-                            <span href="#games" class="game-card__button button" role="button" aria-label="Перейти к списку игр">Играть!</span>
+                            <button class="game-card__button button" role="button" aria-label="Узнать больше об игре 'Переверни текст'">Играть!</button>
                         </div>
                     </a>
                 </article>
 
                 <article class="game-card">
-                    <a href="#game4" class="game-card__content">
+                    <a href="#about-game4" class="game-card__content">
                         <img src="img/game-card-4.png" alt="Обложка игры 'Камень, ножницы, бумага'" class="game-card__image">
                         <div class="game-card__info">
                             <div class="game-card__badge">
@@ -107,13 +107,13 @@
                             <div class="game-card__subtitle">
                                 Сыграй в популярную игру против компьютера.
                             </div>
-                            <span href="#games" class="game-card__button button" role="button" aria-label="Перейти к списку игр">Играть!</span>
+                            <button class="game-card__button button" role="button" aria-label="Узнать больше об игре 'Камень, ножницы, бумага'">Играть!</button>
                         </div>
                     </a>
                 </article>
 
                 <article class="game-card">
-                    <a href="#game5" class="game-card__content">
+                    <a href="#about-game5" class="game-card__content">
                         <img src="img/game-card-5.png" alt="Обложка игры 'Простая викторина'" class="game-card__image">
                         <div class="game-card__info">
                             <div class="game-card__badge">
@@ -121,15 +121,15 @@
                             </div>
                             <h3 class="game-card__title">Простая викторина</h3>
                             <div class="game-card__subtitle">
-                                Отвечай на вопросы викториныс вариантами ответов.
+                                Отвечай на вопросы викторины с вариантами ответов.
                             </div>
-                            <span href="#games" class="game-card__button button" role="button" aria-label="Перейти к списку игр">Играть!</span>
+                            <button class="game-card__button button" role="button" aria-label="Узнать больше об игре 'Простая викторина'">Играть!</button>
                         </div>
                     </a>
                 </article>
 
                 <article class="game-card">
-                    <a href="#game6" class="game-card__content">
+                    <a href="#about-game6" class="game-card__content">
                         <img src="img/game-card-6.png" alt="Обложка игры 'Генератор случайных цветов'" class="game-card__image">
                         <div class="game-card__info">
                             <div class="game-card__badge">
@@ -139,11 +139,68 @@
                             <div class="game-card__subtitle">
                                 Игра, в которой при клике на кнопку фон страницы меняется на случайный.
                             </div>
-                            <span href="#games" class="game-card__button button" role="button" aria-label="Перейти к списку игр">Играть!</span>
+                            <button class="game-card__button button" role="button" aria-label="Узнать больше об игре 'Генератор случайных цветов'">Играть!</button>
                         </div>
                     </a>
                 </article>
             </nav>
+
+            <h2 class="games__additional-text">Об играх</h2>
+
+            <div id="about-game1" class="games__additional-block games__additional-block--right">
+                <div class="games__additional-content">
+                    <h3 class="games__additional-title">Угадай число</h3>
+                    <div class="games__additional-subtitle">Попробуй угадать случайное число от 1 до 100.</div>
+                    <button class="games__additional-button button" role="button" aria-label="Начать игру 'Угадай число'">Играть!</button>
+                </div>
+                <img src="img/game-card-1-pc.png" alt="Обложка игры 'Угадай число'" class="games__additional-image games__additional-image--right">
+            </div>
+
+            <div id="about-game2" class="games__additional-block games__additional-block--left">
+                <img src="img/game-card-2-px.png" alt="Обложка игры 'Простая арифметика'" class="games__additional-image games__additional-image--left">
+                <div class="games__additional-content">
+                    <h3 class="games__additional-title">Простая арифметика</h3>
+                    <div class="games__additional-subtitle">Попробуй решить простые арифметические задачи.</div>
+                    <button class="games__additional-button button" role="button" aria-label="Начать игру 'Простая арифметика'">Играть!</button>
+                </div>
+            </div>
+
+            <div id="about-game3" class="games__additional-block games__additional-block--right">
+                <div class="games__additional-content">
+                    <h3 class="games__additional-title">Переверни текст</h3>
+                    <div class="games__additional-subtitle">Попробуй ввести текст, который будет перевернут.</div>
+                    <button class="games__additional-button button" role="button" aria-label="Начать игру 'Переверни текст'">Играть!</button>
+                </div>
+                <img src="img/game-card-3-px.png" alt="Обложка игры 'Переверни текст'" class="games__additional-image games__additional-image--right">
+            </div>
+
+            <div id="about-game4" class="games__additional-block games__additional-block--left">
+                <img src="img/game-card-4-px.png" alt="Обложка игры 'Камень, ножницы, бумага'" class="games__additional-image games__additional-image--left">
+                <div class="games__additional-content">
+                    <h3 class="games__additional-title">Камень, ножницы, бумага</h3>
+                    <div class="games__additional-subtitle">Сыграй в популярную игру против компьютера.</div>
+                    <button class="games__additional-button button" role="button" aria-label="Начать игру 'Камень, ножницы, бумага'">Играть!</button>
+                </div>
+            </div>
+
+            <div id="about-game5" class="games__additional-block games__additional-block--right">
+                <div class="games__additional-content">
+                    <h3 class="games__additional-title">Простая викторина</h3>
+                    <div class="games__additional-subtitle">Отвечай на вопросы викторины с вариантами ответов.</div>
+                    <button class="games__additional-button button" role="button" aria-label="Начать игру 'Простая викторина'">Играть!</button>
+                </div>
+                <img src="img/game-card-5-px.png" alt="Обложка игры 'Простая викторина'" class="games__additional-image games__additional-image--right">
+            </div>
+
+            <div id="about-game6" class="games__additional-block games__additional-block--left">
+                <img src="img/game-card-6-px.png" alt="Обложка игры 'Генератор случайных цветов'" class="games__additional-image games__additional-image--left">
+                <div class="games__additional-content">
+                    <h3 class="games__additional-title">Генератор случайных цветов</h3>
+                    <div class="games__additional-subtitle">Игра, в которой при клике на кнопку фон страницы меняется на случайный.</div>
+                    <button class="games__additional-button button" role="button" aria-label="Начать игру 'Генератор случайных цветов'">Играть!</button>
+                </div>
+            </div>
+
         </section>
     </main>
 
