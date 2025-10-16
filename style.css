@@ -268,6 +268,10 @@ body {
 }
 
 @media (max-width: 1200px) {
+  .hero {
+    background-image: url("img/Vector.svg"), url("img/star-2.svg"), url("img/star-3.svg"), url("img/star-4.svg"), url("img/star-5.svg");
+    background-position: 100% 0px, 20% 90px, 15% 70px, 80% 700px, 70% 670px;
+  }
   .center {
     padding-left: 16px;
     padding-right: 16px;
@@ -291,7 +295,6 @@ body {
     font-weight: 500;
   }
   .scroll {
-    padding-bottom: 48px;
     padding-left: 27px;
     height: 51.34px;
     padding-top: 16px;
