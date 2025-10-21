@@ -9,6 +9,24 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
     </style>
+    <script>
+        function guessNumberGame(){
+            let randomNumber = Math.floor(Math.random() * 100) + 1;
+            while (true) {
+                let userGuess = prompt("Попробуй угадать число!");
+                if (userGuess == randomNumber){
+                    alert('Ты угадал!');
+                    break;
+                }
+                else if (userGuess < randomNumber){
+                    alert('Твое число меньше загаданного');
+                }
+                else{
+                    alert('Твое число больше загаданного');
+                }
+            }
+        }
+    </script>
 </head>
 <body>
     <main>
@@ -59,7 +77,7 @@
                             <div class="game-card__subtitle">
                                 Попробуй угадать случайное число от 1 до 100.
                             </div>
-                            <button class="game-card__button button" role="button" aria-label="Узнать больше об игре 'Угадай число'">Играть!</button>
+                            <button onclick="guessNumberGame()" class="game-card__button button" role="button" aria-label="Узнать больше об игре 'Угадай число'">Играть!</button>
                         </div>
                     </a>
                 </article>
@@ -151,7 +169,7 @@
                 <div class="games__additional-content">
                     <h3 class="games__additional-title">Угадай число</h3>
                     <div class="games__additional-subtitle">Попробуй угадать случайное число от 1 до 100.</div>
-                    <button class="games__additional-button button" role="button" aria-label="Начать игру 'Угадай число'">Играть!</button>
+                    <button onclick="guessNumberGame()" class="games__additional-button button" role="button" aria-label="Начать игру 'Угадай число'">Играть!</button>
                 </div>
                 <img src="img/game-card-1-pc.png" alt="Обложка игры 'Угадай число'" class="games__additional-image games__additional-image--right">
             </div>
