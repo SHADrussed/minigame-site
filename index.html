@@ -26,6 +26,53 @@
                 }
             }
         }
+
+        function mathGame(){
+    
+            function getRandomOperator(operations){
+                return operations[Math.floor(Math.random() * operations.length)]
+            };
+            
+            function getRandomNumber(variety = 100){
+                return Math.floor(Math.random() * (variety + 1))
+            };
+            
+            function countAnswer(operator, firstNumber, secondNumber){
+                
+                return operator = '+' ? firstNumber + secondNumber : operator = '-' ? firstNumber - secondNumber : operator = '*' ? firstNumber * secondNumber : Math.floor(firstNumber / secondNumber);
+                
+            };
+            
+            let gameData = {
+                operations: ['+', '-', '*', '/']
+            };
+            
+            alert('Привет! Приветствую в игре "Простая арифметика"');
+            
+            let randomOperator = getRandomOperator(gameData.operations);
+            let randomNumberFirst = getRandomNumber(20);
+            let randomNumberSecond = getRandomNumber(10);
+
+            if (randomNumberSecond === 0) {
+                randomNumberSecond = 1; // Избегаем деления на ноль
+            }
+            
+            let finalExpression = parseInt(prompt(`Чему равно ${randomNumberFirst} ${randomOperator} ${randomNumberSecond} =  ?`))
+            
+            let correctAnswer = countAnswer(randomOperator, randomNumberFirst, randomNumberSecond);
+            
+            if (finalExpression === correctAnswer){
+                alert("Правильно!")
+            }
+            else{
+                alert("Неправильно..")
+            }
+
+            return ;
+            
+            
+            
+        };
     </script>
 </head>
 <body>
@@ -93,7 +140,7 @@
                             <div class="game-card__subtitle">
                                 Попробуй решить простые арифметические задачи.
                             </div>
-                            <button class="game-card__button button" role="button" aria-label="Узнать больше об игре 'Простая арифметика'">Играть!</button>
+                            <button onclick="mathGame()" class="game-card__button button" role="button" aria-label="Узнать больше об игре 'Простая арифметика'">Играть!</button>
                         </div>
                     </a>
                 </article>
@@ -179,7 +226,7 @@
                 <div class="games__additional-content">
                     <h3 class="games__additional-title">Простая арифметика</h3>
                     <div class="games__additional-subtitle">Попробуй решить простые арифметические задачи.</div>
-                    <button class="games__additional-button button" role="button" aria-label="Начать игру 'Простая арифметика'">Играть!</button>
+                    <button onclick="mathGame()" class="games__additional-button button" role="button" aria-label="Начать игру 'Простая арифметика'">Играть!</button>
                 </div>
             </div>
 
