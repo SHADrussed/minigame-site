@@ -73,6 +73,46 @@
             
             
         };
+
+        function reverseTextGame(){
+            let userText = prompt('Введи текст, который хочешь перевернуть!')
+            alert(userText.split('').reverse().join(''))
+        };
+
+        function questionGameQuiz(){
+                // Массив вопросов и правильных ответов
+            const quiz = [
+                {
+                    question: "Какой цвет неба?",
+                    options: ["1. Красный", "2. Синий", "3. Зеленый"],
+                    correctAnswer: 2 // номер правильного ответа
+                },
+                {
+                    question: "Сколько дней в неделе?",
+                    options: ["1. Шесть", "2. Семь", "3. Восемь"],
+                    correctAnswer: 2
+                },
+                {
+                    question: "Сколько у человека пальцев на одной руке?",
+                    options: ["1. Четыре", "2. Пять", "3. Шесть"],
+                    correctAnswer: 2
+                }
+            ];
+            
+            let correctAnswers = 0;
+            
+            for (let i = 0; i < quiz.length; i++){
+                userAnswer = parseInt(prompt(`${quiz[i].question} 
+                Варианты отоветов: ${quiz[i].options.join(' ')}`));
+                if (userAnswer === quiz[i].correctAnswer) {
+                    correctAnswers += 1;
+                }
+            }
+            
+            alert('Количество правильных ответов: ' + correctAnswers);
+            
+            
+            }
     </script>
 </head>
 <body>
@@ -156,7 +196,7 @@
                             <div class="game-card__subtitle">
                                 Попробуй ввести текст, который будет перевернут.
                             </div>
-                            <button class="game-card__button button" role="button" aria-label="Узнать больше об игре 'Переверни текст'">Играть!</button>
+                            <button onclick="reverseTextGame()" class="game-card__button button" role="button" aria-label="Узнать больше об игре 'Переверни текст'">Играть!</button>
                         </div>
                     </a>
                 </article>
@@ -188,7 +228,7 @@
                             <div class="game-card__subtitle">
                                 Отвечай на вопросы викторины с вариантами ответов.
                             </div>
-                            <button class="game-card__button button" role="button" aria-label="Узнать больше об игре 'Простая викторина'">Играть!</button>
+                            <button onclick="questionGameQuiz()" class="game-card__button button" role="button" aria-label="Узнать больше об игре 'Простая викторина'">Играть!</button>
                         </div>
                     </a>
                 </article>
@@ -234,7 +274,7 @@
                 <div class="games__additional-content">
                     <h3 class="games__additional-title">Переверни текст</h3>
                     <div class="games__additional-subtitle">Попробуй ввести текст, который будет перевернут.</div>
-                    <button class="games__additional-button button" role="button" aria-label="Начать игру 'Переверни текст'">Играть!</button>
+                    <button onclick="reverseTextGame()" class="games__additional-button button" role="button" aria-label="Начать игру 'Переверни текст'">Играть!</button>
                 </div>
                 <img src="img/game-card-3-px.png" alt="Обложка игры 'Переверни текст'" class="games__additional-image games__additional-image--right">
             </div>
@@ -252,7 +292,7 @@
                 <div class="games__additional-content">
                     <h3 class="games__additional-title">Простая викторина</h3>
                     <div class="games__additional-subtitle">Отвечай на вопросы викторины с вариантами ответов.</div>
-                    <button class="games__additional-button button" role="button" aria-label="Начать игру 'Простая викторина'">Играть!</button>
+                    <button onclick="questionGameQuiz()" class="games__additional-button button" role="button" aria-label="Начать игру 'Простая викторина'">Играть!</button>
                 </div>
                 <img src="img/game-card-5-px.png" alt="Обложка игры 'Простая викторина'" class="games__additional-image games__additional-image--right">
             </div>
