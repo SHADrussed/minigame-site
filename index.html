@@ -1,11 +1,360 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta name="description" content="Сайт с мини-играми: викторина, угадай число, переверни текст и другие увлекательные игры">
+    <title>Сайт с мини-играми</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+    </style>
+    <script>
+        function guessNumberGame(){
+            let randomNumber = Math.floor(Math.random() * 100) + 1;
+            while (true) {
+                let userGuess = prompt("Попробуй угадать число!");
+                if (userGuess == randomNumber){
+                    alert('Ты угадал!');
+                    break;
+                }
+                else if (userGuess < randomNumber){
+                    alert('Твое число меньше загаданного');
+                }
+                else{
+                    alert('Твое число больше загаданного');
+                }
+            }
+        }
+
+        function mathGame(){
+    
+            function getRandomOperator(operations){
+                return operations[Math.floor(Math.random() * operations.length)]
+            };
+            
+            function getRandomNumber(variety = 100){
+                return Math.floor(Math.random() * (variety + 1))
+            };
+            
+            function countAnswer(operator, firstNumber, secondNumber){
+                
+                return operator = '+' ? firstNumber + secondNumber : operator = '-' ? firstNumber - secondNumber : operator = '*' ? firstNumber * secondNumber : Math.floor(firstNumber / secondNumber);
+                
+            };
+            
+            let gameData = {
+                operations: ['+', '-', '*', '/']
+            };
+            
+            alert('Привет! Приветствую в игре "Простая арифметика"');
+            
+            let randomOperator = getRandomOperator(gameData.operations);
+            let randomNumberFirst = getRandomNumber(20);
+            let randomNumberSecond = getRandomNumber(10);
+
+            if (randomNumberSecond === 0) {
+                randomNumberSecond = 1; // Избегаем деления на ноль
+            }
+            
+            let finalExpression = parseInt(prompt(`Чему равно ${randomNumberFirst} ${randomOperator} ${randomNumberSecond} =  ?`))
+            
+            let correctAnswer = countAnswer(randomOperator, randomNumberFirst, randomNumberSecond);
+            
+            if (finalExpression === correctAnswer){
+                alert("Правильно!")
+            }
+            else{
+                alert("Неправильно..")
+            }
+
+            return ;
+            
+            
+            
+        };
+
+        function reverseTextGame(){
+            let userText = prompt('Введи текст, который хочешь перевернуть!')
+            alert(userText.split('').reverse().join(''))
+        };
+
+        function questionGameQuiz(){
+                // Массив вопросов и правильных ответов
+            const quiz = [
+                {
+                    question: "Какой цвет неба?",
+                    options: ["1. Красный", "2. Синий", "3. Зеленый"],
+                    correctAnswer: 2 // номер правильного ответа
+                },
+                {
+                    question: "Сколько дней в неделе?",
+                    options: ["1. Шесть", "2. Семь", "3. Восемь"],
+                    correctAnswer: 2
+                },
+                {
+                    question: "Сколько у человека пальцев на одной руке?",
+                    options: ["1. Четыре", "2. Пять", "3. Шесть"],
+                    correctAnswer: 2
+                }
+            ];
+            
+            let correctAnswers = 0;
+            
+            for (let i = 0; i < quiz.length; i++){
+                userAnswer = parseInt(prompt(`${quiz[i].question} 
+                Варианты отоветов: ${quiz[i].options.join(' ')}`));
+                if (userAnswer === quiz[i].correctAnswer) {
+                    correctAnswers += 1;
+                }
+            }
+            
+            alert('Количество правильных ответов: ' + correctAnswers);
+            
+            
+            }
+
+            // your code goes here
+        function rockPaperScissorsGame(){
+            
+            let userGuess = prompt('Выбери камень, ножницы или бумагу!').toLowerCase();
+            
+            let variations = ["камень", "ножницы", "бумага"];
+            
+            let computerGuess = variations[Math.floor(Math.random() * 3)];
+            
+            if (userGuess == computerGuess){
+                alert('Ничья!');
+            }
+            else if (userGuess == "камень"){
+                if (computerGuess == "бумага"){
+                    alert('Проигрыш :(');
+                }
+                else {
+                    alert("Выйгрыш!");
+                }
+            }
+            else if (userGuess == "ножницы"){
+                if (computerGuess == "камень"){
+                    alert('Проигрыш :(');
+                }
+                else {
+                    alert("Выйгрыш!");
+                }
+            }
+            
+            else if (userGuess == "бумага"){
+                if (computerGuess == "ножницы"){
+                    alert('Проигрыш :(');
+                }
+                else {
+                    alert("Выйгрыш!");
+                }
+            }
+            
+            alert(`Твой выбор - ${userGuess}, компьютер выбрал - ${computerGuess}`);
+            
+        }
+    </script>
 </head>
 <body>
-    
+    <main>
+        <section class="hero center">
+            <header class="header">
+                <h1 class="header__title">Добро пожаловать на мой сайт мини-игр</h1>
+                <p class="header__subtitle">Тебе предстоит пройти несколько увлекательных игр. Если готов, нажимай «Поехали!» и приступай.</p>
+                <a href="#games" class="header__button button" role="button" aria-label="Перейти к списку игр">Поехали!</a>
+                <nav class="header__scroll">
+                </nav>
+            </header>
+        </section>
+
+        <section class="scroll" aria-label="Список доступных игр">
+            <span class="scroll__text">Викторина</span>
+            <img src="img/star.svg" class="scroll__icon" alt="Декоративная звезда" aria-hidden="true">
+            <span class="scroll__text">Угадай число</span>
+            <img src="img/star.svg" class="scroll__icon" alt="Декоративная звезда" aria-hidden="true">
+            <span class="scroll__text">Переверни текст</span>
+            <img src="img/star.svg" class="scroll__icon" alt="Декоративная звезда" aria-hidden="true">
+            <span class="scroll__text">Простая арифметика</span>
+            <img src="img/star.svg" class="scroll__icon" alt="Декоративная звезда" aria-hidden="true">
+            <span class="scroll__text">Камень, ножницы, бумага</span>
+            <img src="img/star.svg" class="scroll__icon" alt="Декоративная звезда" aria-hidden="true">
+            <span class="scroll__text">Генератор случайных цветов</span>
+            <img src="img/star.svg" class="scroll__icon" alt="Декоративная звезда" aria-hidden="true">
+        </section>
+
+        <section class="games center" id="games" aria-labelledby="games-title">
+            <div class="games__intro">
+                <h2 class="games__title" id="games-title">Об играх</h2>
+                <p class="games__description">В моей коллекции представлено 6 игр на разные темы. Игры несложные — в них может поиграть каждый.
+Все игры доступны для пользования.</p>
+            </div>
+            
+            <!-- Это только для мобильной версии название -->
+            <h2 class="games__mobile">Мини-игры</h2>
+            
+            <nav class="games__list" aria-label="Навигация по играм">
+                <article class="game-card">
+                    <a href="#about-game1" class="game-card__content">
+                        <img src="img/game-card-1.png" alt="Обложка игры 'Угадай число'" class="game-card__image">
+                        <div class="game-card__info">
+                            <div class="game-card__badge">
+                                <p class="game-card__badge-text">Игра №1</p>
+                            </div>
+                            <h3 class="game-card__title">Угадай число</h3>
+                            <div class="game-card__subtitle">
+                                Попробуй угадать случайное число от 1 до 100.
+                            </div>
+                            <button onclick="guessNumberGame()" class="game-card__button button" role="button" aria-label="Узнать больше об игре 'Угадай число'">Играть!</button>
+                        </div>
+                    </a>
+                </article>
+
+                <article class="game-card">
+                    <a href="#about-game2" class="game-card__content">
+                        <img src="img/game-card-2.png" alt="Обложка игры 'Простая арифметика'" class="game-card__image">
+                        <div class="game-card__info">
+                            <div class="game-card__badge">
+                                <p class="game-card__badge-text">Игра №2</p>
+                            </div>
+                            <h3 class="game-card__title">Простая арифметика</h3>
+                            <div class="game-card__subtitle">
+                                Попробуй решить простые арифметические задачи.
+                            </div>
+                            <button onclick="mathGame()" class="game-card__button button" role="button" aria-label="Узнать больше об игре 'Простая арифметика'">Играть!</button>
+                        </div>
+                    </a>
+                </article>
+
+                <article class="game-card">
+                    <a href="#about-game3" class="game-card__content">
+                        <img src="img/game-card-3.png" alt="Обложка игры 'Переверни текст'" class="game-card__image">
+                        <div class="game-card__info">
+                            <div class="game-card__badge">
+                                <p class="game-card__badge-text">Игра №3</p>
+                            </div>
+                            <h3 class="game-card__title">Переверни текст</h3>
+                            <div class="game-card__subtitle">
+                                Попробуй ввести текст, который будет перевернут.
+                            </div>
+                            <button onclick="reverseTextGame()" class="game-card__button button" role="button" aria-label="Узнать больше об игре 'Переверни текст'">Играть!</button>
+                        </div>
+                    </a>
+                </article>
+
+                <article class="game-card">
+                    <a href="#about-game4" class="game-card__content">
+                        <img src="img/game-card-4.png" alt="Обложка игры 'Камень, ножницы, бумага'" class="game-card__image">
+                        <div class="game-card__info">
+                            <div class="game-card__badge">
+                                <p class="game-card__badge-text">Игра №4</p>
+                            </div>
+                            <h3 class="game-card__title">Камень, ножницы, бумага</h3>
+                            <div class="game-card__subtitle">
+                                Сыграй в популярную игру против компьютера.
+                            </div>
+                            <button onclick="rockPaperScissorsGame()" class="game-card__button button" role="button" aria-label="Узнать больше об игре 'Камень, ножницы, бумага'">Играть!</button>
+                        </div>
+                    </a>
+                </article>
+
+                <article class="game-card">
+                    <a href="#about-game5" class="game-card__content">
+                        <img src="img/game-card-5.png" alt="Обложка игры 'Простая викторина'" class="game-card__image">
+                        <div class="game-card__info">
+                            <div class="game-card__badge">
+                                <p class="game-card__badge-text">Игра №5</p>
+                            </div>
+                            <h3 class="game-card__title">Простая викторина</h3>
+                            <div class="game-card__subtitle">
+                                Отвечай на вопросы викторины с вариантами ответов.
+                            </div>
+                            <button onclick="questionGameQuiz()" class="game-card__button button" role="button" aria-label="Узнать больше об игре 'Простая викторина'">Играть!</button>
+                        </div>
+                    </a>
+                </article>
+
+                <article class="game-card">
+                    <a href="#about-game6" class="game-card__content">
+                        <img src="img/game-card-6.png" alt="Обложка игры 'Генератор случайных цветов'" class="game-card__image">
+                        <div class="game-card__info">
+                            <div class="game-card__badge">
+                                <p class="game-card__badge-text">Игра №6</p>
+                            </div>
+                            <h3 class="game-card__title">Генератор случайных цветов</h3>
+                            <div class="game-card__subtitle">
+                                Игра, в которой при клике на кнопку фон страницы меняется на случайный.
+                            </div>
+                            <button class="game-card__button button" role="button" aria-label="Узнать больше об игре 'Генератор случайных цветов'">Играть!</button>
+                        </div>
+                    </a>
+                </article>
+            </nav>
+
+            <h2 class="games__additional-text">Об играх</h2>
+
+            <div id="about-game1" class="games__additional-block games__additional-block--right">
+                <div class="games__additional-content">
+                    <h3 class="games__additional-title">Угадай число</h3>
+                    <div class="games__additional-subtitle">Попробуй угадать случайное число от 1 до 100.</div>
+                    <button onclick="guessNumberGame()" class="games__additional-button button" role="button" aria-label="Начать игру 'Угадай число'">Играть!</button>
+                </div>
+                <img src="img/game-card-1-pc.png" alt="Обложка игры 'Угадай число'" class="games__additional-image games__additional-image--right">
+            </div>
+
+            <div id="about-game2" class="games__additional-block games__additional-block--left">
+                <img src="img/game-card-2-px.png" alt="Обложка игры 'Простая арифметика'" class="games__additional-image games__additional-image--left">
+                <div class="games__additional-content">
+                    <h3 class="games__additional-title">Простая арифметика</h3>
+                    <div class="games__additional-subtitle">Попробуй решить простые арифметические задачи.</div>
+                    <button onclick="mathGame()" class="games__additional-button button" role="button" aria-label="Начать игру 'Простая арифметика'">Играть!</button>
+                </div>
+            </div>
+
+            <div id="about-game3" class="games__additional-block games__additional-block--right">
+                <div class="games__additional-content">
+                    <h3 class="games__additional-title">Переверни текст</h3>
+                    <div class="games__additional-subtitle">Попробуй ввести текст, который будет перевернут.</div>
+                    <button onclick="reverseTextGame()" class="games__additional-button button" role="button" aria-label="Начать игру 'Переверни текст'">Играть!</button>
+                </div>
+                <img src="img/game-card-3-px.png" alt="Обложка игры 'Переверни текст'" class="games__additional-image games__additional-image--right">
+            </div>
+
+            <div id="about-game4" class="games__additional-block games__additional-block--left">
+                <img src="img/game-card-4-px.png" alt="Обложка игры 'Камень, ножницы, бумага'" class="games__additional-image games__additional-image--left">
+                <div class="games__additional-content">
+                    <h3 class="games__additional-title">Камень, ножницы, бумага</h3>
+                    <div class="games__additional-subtitle">Сыграй в популярную игру против компьютера.</div>
+                    <button onclick="rockPaperScissorsGame()" class="games__additional-button button" role="button" aria-label="Начать игру 'Камень, ножницы, бумага'">Играть!</button>
+                </div>
+            </div>
+
+            <div id="about-game5" class="games__additional-block games__additional-block--right">
+                <div class="games__additional-content">
+                    <h3 class="games__additional-title">Простая викторина</h3>
+                    <div class="games__additional-subtitle">Отвечай на вопросы викторины с вариантами ответов.</div>
+                    <button onclick="questionGameQuiz()" class="games__additional-button button" role="button" aria-label="Начать игру 'Простая викторина'">Играть!</button>
+                </div>
+                <img src="img/game-card-5-px.png" alt="Обложка игры 'Простая викторина'" class="games__additional-image games__additional-image--right">
+            </div>
+
+            <div id="about-game6" class="games__additional-block games__additional-block--left">
+                <img src="img/game-card-6-px.png" alt="Обложка игры 'Генератор случайных цветов'" class="games__additional-image games__additional-image--left">
+                <div class="games__additional-content">
+                    <h3 class="games__additional-title">Генератор случайных цветов</h3>
+                    <div class="games__additional-subtitle">Игра, в которой при клике на кнопку фон страницы меняется на случайный.</div>
+                    <button class="games__additional-button button" role="button" aria-label="Начать игру 'Генератор случайных цветов'">Играть!</button>
+                </div>
+            </div>
+
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer__background">
+            <p class="footer__text">Все права защищены.</p>
+        </div>
+    </footer>
 </body>
 </html>

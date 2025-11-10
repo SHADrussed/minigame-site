@@ -1,0 +1,138 @@
+@media (max-width: 1200px){
+    .hero{
+        background-image: url('img/Vector.svg'), url('img/star-2.svg'), url('img/star-3.svg'), url('img/star-4.svg'), url('img/star-5.svg');
+        background-position: 100% 0px, 20% 90px, 15% 70px, 80% 700px, 70% 670px
+    }
+    .center{
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+    .header{
+        align-items: center;
+        &__title{
+            font-size: 40px;
+            text-align: center;
+            width: 262px;
+        }
+        &__subtitle{
+            font-size: 16px;
+            text-align: center;
+        }
+        &__button{
+            width: 285px;
+            height: 55px;
+            font-size: 16px;
+            font-weight: 500;
+        }
+    }
+    .scroll{
+        padding-left: 27px;
+        height: 51.34px;
+        padding-top: 16px;
+        gap: 27px;
+        &__text{
+            font-size: 16px;
+        }
+        &__icon{
+            height: 20px;
+        }
+    }
+    
+    .games{
+        padding-bottom: 10px;
+        &__intro{
+            display: none;
+        }
+        &__mobile{
+            display: block;
+            padding-top: 48px;
+            padding-bottom: 48px;
+            font-size: 40px;
+            font-weight: 700;
+            color: rgb(255, 255, 255);
+        }
+
+        &__additional{
+            &-text{
+                display: none;
+            }
+            &-block{
+                display: none;
+            }
+        }
+
+        &__list {
+            gap: 20px;
+            justify-content: center;
+        }
+    }
+
+    .game-card {
+        &__content {
+            height: 520px;
+            width: 343px;
+            margin-top: 0;
+        }
+
+        &:nth-child(2),
+        &:nth-child(3),
+        &:nth-child(5) {
+            .game-card__content {
+                height: 570px;
+            }
+        }
+
+        &:nth-child(4) {
+            .game-card__content {
+                height: 610px;
+                margin-top: 0px;
+            }
+        }
+
+        &:nth-child(6) {
+            .game-card__content {
+                height: 630px;
+                margin-top: 0px;
+            }
+        }
+
+        &__subtitle {
+            display: block;
+            padding-top: 16px;
+        }
+
+        &__title {
+            padding-top: 0px;
+        }
+
+        &__badge {
+            display: none;
+        }
+
+        &__button {
+            display: block;
+            width: 285px;
+            margin-top: 32px;
+            font-size: 16px;
+            font-weight: 500;
+            text-align: center;
+        }
+
+        &__info {
+            padding: 20px 30px;
+        }
+    }
+
+    .footer {
+        &__background {
+            height: 100px;
+            background: rgb(189, 237, 53);
+        }
+        &__text {
+            text-align: center;
+            padding: 40px;
+            font-size: 16px;
+            font-weight: 600;
+        }
+    }
+}
