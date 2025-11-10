@@ -113,6 +113,48 @@
             
             
             }
+
+            // your code goes here
+        function rockPaperScissorsGame(){
+            
+            let userGuess = prompt('Выбери камень, ножницы или бумагу!').toLowerCase();
+            
+            let variations = ["камень", "ножницы", "бумага"];
+            
+            let computerGuess = variations[Math.floor(Math.random() * 3)];
+            
+            if (userGuess == computerGuess){
+                alert('Ничья!');
+            }
+            else if (userGuess == "камень"){
+                if (computerGuess == "бумага"){
+                    alert('Проигрыш :(');
+                }
+                else {
+                    alert("Выйгрыш!");
+                }
+            }
+            else if (userGuess == "ножницы"){
+                if (computerGuess == "камень"){
+                    alert('Проигрыш :(');
+                }
+                else {
+                    alert("Выйгрыш!");
+                }
+            }
+            
+            else if (userGuess == "бумага"){
+                if (computerGuess == "ножницы"){
+                    alert('Проигрыш :(');
+                }
+                else {
+                    alert("Выйгрыш!");
+                }
+            }
+            
+            alert(`Твой выбор - ${userGuess}, компьютер выбрал - ${computerGuess}`);
+            
+        }
     </script>
 </head>
 <body>
@@ -212,7 +254,7 @@
                             <div class="game-card__subtitle">
                                 Сыграй в популярную игру против компьютера.
                             </div>
-                            <button class="game-card__button button" role="button" aria-label="Узнать больше об игре 'Камень, ножницы, бумага'">Играть!</button>
+                            <button onclick="rockPaperScissorsGame()" class="game-card__button button" role="button" aria-label="Узнать больше об игре 'Камень, ножницы, бумага'">Играть!</button>
                         </div>
                     </a>
                 </article>
@@ -284,7 +326,7 @@
                 <div class="games__additional-content">
                     <h3 class="games__additional-title">Камень, ножницы, бумага</h3>
                     <div class="games__additional-subtitle">Сыграй в популярную игру против компьютера.</div>
-                    <button class="games__additional-button button" role="button" aria-label="Начать игру 'Камень, ножницы, бумага'">Играть!</button>
+                    <button onclick="rockPaperScissorsGame()" class="games__additional-button button" role="button" aria-label="Начать игру 'Камень, ножницы, бумага'">Играть!</button>
                 </div>
             </div>
 
