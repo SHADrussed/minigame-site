@@ -155,6 +155,14 @@
             alert(`Твой выбор - ${userGuess}, компьютер выбрал - ${computerGuess}`);
             
         }
+
+        function createRandomColour(){
+            const backgroundGames = document.querySelector(".games")
+            
+            var randomRgb = [Math.floor(Math.random() * 256), Math.floor(Math.random() * 256), Math.floor(Math.random() * 256)]
+            
+            backgroundGames.style.backgroundColor = `rgb(${randomRgb[0]}, ${randomRgb[1]}, ${randomRgb[2]})`;
+        }
     </script>
 </head>
 <body>
@@ -286,7 +294,7 @@
                             <div class="game-card__subtitle">
                                 Игра, в которой при клике на кнопку фон страницы меняется на случайный.
                             </div>
-                            <button class="game-card__button button" role="button" aria-label="Узнать больше об игре 'Генератор случайных цветов'">Играть!</button>
+                            <button onclick="createRandomColour()" class="game-card__button button" role="button" aria-label="Узнать больше об игре 'Генератор случайных цветов'">Играть!</button>
                         </div>
                     </a>
                 </article>
@@ -344,7 +352,7 @@
                 <div class="games__additional-content">
                     <h3 class="games__additional-title">Генератор случайных цветов</h3>
                     <div class="games__additional-subtitle">Игра, в которой при клике на кнопку фон страницы меняется на случайный.</div>
-                    <button class="games__additional-button button" role="button" aria-label="Начать игру 'Генератор случайных цветов'">Играть!</button>
+                    <button onclick="createRandomColour()" class="games__additional-button button" role="button" aria-label="Начать игру 'Генератор случайных цветов'">Играть!</button>
                 </div>
             </div>
 
