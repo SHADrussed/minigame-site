@@ -73,15 +73,23 @@ body {
   margin-top: 48px;
 }
 
+.marquee {
+  animation: scroll 14s linear infinite;
+}
+
 .scroll {
+  background-color: rgb(188, 236, 48);
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+}
+.scroll__track {
   display: flex;
   gap: 50px;
   padding-top: 25px;
   height: 90px;
-  width: 100%;
-  background-color: rgb(188, 236, 48);
-  overflow: hidden;
-  white-space: nowrap;
+  width: -moz-max-content;
+  width: max-content;
 }
 .scroll__text {
   font-size: 30px;
@@ -92,6 +100,14 @@ body {
   height: 30px;
 }
 
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
 .games {
   background: rgb(32, 32, 39);
   padding-bottom: 100px;
@@ -295,10 +311,11 @@ body {
     font-weight: 500;
   }
   .scroll {
-    padding-left: 27px;
-    height: 51.34px;
-    padding-top: 16px;
+    height: 50px;
     gap: 27px;
+  }
+  .scroll__track {
+    padding-top: 15px;
   }
   .scroll__text {
     font-size: 16px;
@@ -329,22 +346,38 @@ body {
   .games__list {
     gap: 20px;
     justify-content: center;
+    margin-bottom: 32px;
   }
   .game-card__content {
     height: 520px;
     width: 343px;
     margin-top: 0;
   }
+  .game-card:nth-child(1) .game-card__content {
+    height: 630px;
+  }
+  .game-card:nth-child(1) .game-card__button {
+    margin-top: 150px;
+  }
   .game-card:nth-child(2) .game-card__content, .game-card:nth-child(3) .game-card__content, .game-card:nth-child(5) .game-card__content {
-    height: 570px;
+    height: 630px;
+  }
+  .game-card:nth-child(2) .game-card__button, .game-card:nth-child(3) .game-card__button, .game-card:nth-child(5) .game-card__button {
+    margin-top: 110px;
   }
   .game-card:nth-child(4) .game-card__content {
-    height: 610px;
+    height: 630px;
     margin-top: 0px;
+  }
+  .game-card:nth-child(4) .game-card__button {
+    margin-top: 70px;
   }
   .game-card:nth-child(6) .game-card__content {
     height: 630px;
     margin-top: 0px;
+  }
+  .game-card:nth-child(6) .game-card__button {
+    margin-top: 50px;
   }
   .game-card__subtitle {
     display: block;
