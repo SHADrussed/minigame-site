@@ -86,15 +86,25 @@ body {
     }
 }
 
+.marquee {
+  animation: scroll 14s linear infinite;
+}
+
 .scroll {
-    display: flex;
-    gap: 50px;
-    padding-top: 25px;
-    height: 90px;
-    width: 100%;
+    
     background-color: rgb(188, 236, 48);
     overflow: hidden;
     white-space: nowrap;
+    position: relative;
+
+
+    &__track{
+        display: flex;
+        gap: 50px;
+        padding-top: 25px;
+        height: 90px;
+        width: max-content; 
+    }
 
     &__text {
         font-size: 30px;
@@ -105,6 +115,11 @@ body {
     &__icon {
         height: 30px;
     }
+}
+
+@keyframes scroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
 }
 
 .games {
